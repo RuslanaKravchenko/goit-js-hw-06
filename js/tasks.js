@@ -1,9 +1,9 @@
 import users from './users.js';
 
 // =============================== Задание 1 ===============================
-// const getUserNames = users => users.map(user => user.name);
+const getUserNames = users => users.map(({ name }) => name);
 
-// console.log(getUserNames(users));
+console.log(getUserNames(users));
 // [ 'Moore Hensley', 'Sharlene Bush', 'Ross Vazquez', 'Elma Head', 'Carey Barr', 'Blackburn Dotson', 'Sheree Anthony' ]
 
 // =============================== Задание 2 ===============================
@@ -47,16 +47,16 @@ import users from './users.js';
 // =============================== Задание 7 ===============================
 
 // const calculateTotalBalance = users =>
-// users.reduce((totalBalance, user) => (totalBalance += user.balance), 0);
+// users.reduce((totalBalance, { balance }) => (totalBalance += balance), 0);
 
 // console.log(calculateTotalBalance(users)); // 20916
 
 // =============================== Задание 8 ===============================
 
 // const getUsersWithFriend = (users, friendName) =>
-// users
-// .filter(({ friends }) => friends.includes(friendName))
-// .map(({ name }) => name);
+//   users
+//     .filter(({ friends }) => friends.includes(friendName))
+//     .map(({ name }) => name);
 
 // console.log(getUsersWithFriend(users, 'Briana Decker')); // [ 'Sharlene Bush', 'Sheree Anthony' ]
 // console.log(getUsersWithFriend(users, 'Goldie Gentry')); // [ 'Elma Head', 'Sheree Anthony' ]
@@ -64,7 +64,7 @@ import users from './users.js';
 // =============================== Задание 9 ===============================
 
 // const getNamesSortedByFriendsCount = users =>
-//   users
+//   [...users]
 //     .sort((a, b) => a.friends.length - b.friends.length)
 //     .map(({ name }) => name);
 
@@ -73,11 +73,11 @@ import users from './users.js';
 
 // =============================== Задание 10 ===============================
 
-const getSortedUniqueSkills = users =>
-  users
-    .reduce((totalSkills, user) => [...totalSkills, ...user.skills], [])
-    .filter((skill, idx, skills) => skills.indexOf(skill) === idx)
-    .sort();
+// const getSortedUniqueSkills = users =>
+//   users
+//     .reduce((totalSkills, user) => [...totalSkills, ...user.skills], [])
+//     .filter((skill, idx, skills) => skills.indexOf(skill) === idx)
+//     .sort();
 
-console.log(getSortedUniqueSkills(users));
+// console.log(getSortedUniqueSkills(users));
 // [ 'adipisicing', 'amet', 'anim', 'commodo', 'culpa', 'elit', 'ex', 'ipsum', 'irure', 'laborum', 'lorem', 'mollit', 'non', 'nostrud', 'nulla', 'proident', 'tempor', 'velit', 'veniam' ]
